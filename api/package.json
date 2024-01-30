@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nitro dev",
+    "build": "nitro build",
+    "start": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "assemblyai": "^4.0.0",
+    "aws-sdk": "^2.1517.0",
+    "date-fns": "^3.2.0",
+    "fetch-blob": "^4.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "form-data": "^4.0.0",
+    "fs": "^0.0.1-security",
+    "gpt-tokenizer": "^2.1.2",
+    "inngest": "^3.10.0",
+    "nitropack": "latest",
+    "node-cache": "^5.1.2",
+    "openai": "^4.21.0",
+    "sendblue": "^1.1.9",
+    "stripe": "^14.8.0"
+  }
+}
