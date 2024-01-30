@@ -12,12 +12,7 @@ class IntentAnalysis {
     return tasks;
   }
 
-  static async getIntent(
-    currentUser: Object,
-    main_intents: Array<Object>,
-    background_intents: Array<Object>,
-    text: string
-  ) {
+  static async getIntent(currentUser: Object, text: string) {
     const tasks = this.loadTasks("../agents/tasks");
     const systemMessage = `Your task is to accurately determine user intents for requests involving text, audio, or image content. Analyze the latest message only, using previous messages for context but not for intent analysis. You will receive two lists: 'main_intents' and 'background_intents'. 'Main_intents' outlines the type of response needed (text, image, audio, etc.), while 'background_intents' identifies additional tasks or contextual considerations.
 
@@ -25,7 +20,7 @@ MAIN INTENTS: ${tasks
       .map((i) => `${i.intent}: ${i.patterns.join(", ")}`)
       .join("; ")}.
 
-Respond in JSON format: {"main_intent": ""}. Avoid including pattern identification details. The goal is to assess intent for an AI chatbot across various contexts, including different content moderation levels.`;
+Respond in JSON format: {"intent": ""}. Avoid including pattern identification details. The goal is to assess intent for an AI chatbot across various contexts, including different content moderation levels.`;
 
     const messageHistory = await getMessageHistory(currentUser);
 
